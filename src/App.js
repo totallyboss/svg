@@ -1,18 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+
+
 class App extends Component {
+
+  state = {
+    code: '',
+    convertedCode: '',
+  };
+
+  handleChange = (event) => {
+
+    this.setState({
+      code: event.target.value,
+    });
+
+  };
+
+  handleClick = (event) => {
+    event.preventDefault();
+    const { code } = this.state;
+    this.setState({
+      convertedCode: this.convertCode(code),
+    });
+  };
+
+  convertCode = (svg) => {
+    return svg.toUpperCase();
+  };
+
   render() {
+    const { convertedCode } = this.state;
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div>
+          <textarea rows="10" cols="50" onChange={this.handleChange}/>
+          <button type="button" onClick={this.handleClick}>Convert</button>
+        </div>
+        <div>
+          <textarea rows="10" cols="50" value={convertedCode} disabled="true"/>
+          <button type="button">Copy SVG Code</button>
+        </div>
       </div>
     );
   }
