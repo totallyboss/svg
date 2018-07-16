@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
-
-class App extends Component {
+class SVGConverter extends Component {
 
   state = {
     code: '',
@@ -48,4 +46,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default SVGConverter;
