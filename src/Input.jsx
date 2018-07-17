@@ -14,6 +14,7 @@ class Input extends Component {
   render() {
     return (
       <div className="space_bottom">
+        <h2>Input</h2>
         <textarea
           onChange={this.handleChange}
           className="space_bottom textarea"
