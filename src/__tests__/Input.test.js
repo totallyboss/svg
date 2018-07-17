@@ -18,8 +18,7 @@ describe('Input', () => {
   it('clicking on button should call a function', () => {
     const mockClick = jest.fn();
     const wrapper = shallow(<Button onClick={mockClick}/>);
-    const button = wrapper.find('button');
-    button.simulate('click');
+    wrapper.simulate('click');
     expect(mockClick).toHaveBeenCalledTimes(1);
   });
 

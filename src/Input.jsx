@@ -11,11 +11,9 @@ export const TextArea = ({onChange}) => (
 );
 
 export const Button = ({onClick}) => (
-  <div>
-    <button
-      type="button"
-      onClick={onClick}>Let's convert this bad boy</button>
-  </div>
+  <button type="button" onClick={onClick}>
+    Let's convert this bad boy
+  </button>
 );
 
 class Input extends Component {
