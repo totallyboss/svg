@@ -9,8 +9,4 @@ describe('SVGConverter', () => {
     expect(wrapper.length).toBe(1);
   });
 
-  it('click on convert button calls function', () => {
-
-  });
-
 });
