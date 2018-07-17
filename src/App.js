@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import Input from './Input';
+import Output from './Output';
 
 class SVGConverter extends Component {
 
@@ -8,12 +10,10 @@ class SVGConverter extends Component {
     convertedCode: '',
   };
 
-  handleChange = (event) => {
-
+  handleChange = (value) => {
     this.setState({
-      code: event.target.value,
+      code: value
     });
-
   };
 
   handleClick = (event) => {
@@ -25,6 +25,7 @@ class SVGConverter extends Component {
   };
 
   convertCode = (svg) => {
+    // This function will be replaced with the Util after it's built by Alan
     return svg.toUpperCase();
   };
 
@@ -33,14 +34,12 @@ class SVGConverter extends Component {
 
     return (
       <div className="App">
-        <div>
-          <textarea rows="10" cols="50" onChange={this.handleChange}/>
-          <button type="button" onClick={this.handleClick}>Convert</button>
-        </div>
-        <div>
-          <textarea rows="10" cols="50" value={convertedCode} disabled="true"/>
-          <button type="button">Copy SVG Code</button>
-        </div>
+        <h1>SVG Converter</h1>
+        <Input
+          onChange={this.handleChange}
+          onClick={this.handleClick} />
+        <Output
+          convertedCode={convertedCode}/>
       </div>
     );
   }

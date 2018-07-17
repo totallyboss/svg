@@ -2,6 +2,14 @@
   padding: 20px;
 }
 
+.textarea {
+  width: 100%;
+  height: 200px;
+}
+.space_bottom {
+  margin-bottom: 20px;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

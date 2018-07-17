@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SVGConverter from '../App';
+import SVGConverter, { Input, Output } from '../App';
 
 describe('SVGConverter', () => {
 
@@ -9,9 +9,10 @@ describe('SVGConverter', () => {
     expect(wrapper.length).toBe(1);
   });
 
-  it('should render 2 textarea fields', () => {
+  it('should render input and output components', () => {
     const wrapper = shallow(<SVGConverter/>);
-    expect(wrapper.find('textarea').length).toBe(2);
+    expect(wrapper.find(Input).length).toBe(1);
+    expect(wrapper.find(Output).length).toBe(1);
   });
 
   it('click on convert button calls function', () => {
